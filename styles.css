@@ -1,0 +1,108 @@
+/* ---------- Navbar ---------- */
+.airaware-nav {
+  background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.nav-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.25);
+}
+
+/* ---------- Heading ---------- */
+.airaware-title {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+  text-shadow: 0px 4px 14px rgba(37, 99, 235, 0.25);
+}
+
+.airaware-title span {
+  font-weight: 300;
+}
+
+.airaware-subtitle {
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin-bottom: 25px;
+}
+
+/* ---------- Cards ---------- */
+body {
+  background: #eef5ff;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.card {
+  border: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.info-card {
+  background: white;
+}
+
+.display-values div { margin-bottom: 6px; }
+
+/* ---------- Heatmap ---------- */
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.heat-cell {
+  height: 45px;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .1s ease;
+}
+
+.heat-cell:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* ---------- DARK MODE ---------- */
+body.dark {
+  background: #0f172a !important;
+  color: #e2e8f0 !important;
+}
+
+.dark .card {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+.dark .airaware-subtitle {
+  color: #94a3b8 !important;
+}
+
+.dark .airaware-nav {
+  background: linear-gradient(90deg, #1e3a8a, #1d4ed8, #3b82f6) !important;
+}
+
+.dark .nav-title {
+  color: white !important;
+}
+
+.dark .heat-cell {
+  border: 1px solid rgba(255,255,255,0.15);
+}

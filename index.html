@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AirAware — AQI Prediction</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Gradient Navbar with Dark Mode Toggle -->
+<nav class="navbar airaware-nav px-4 d-flex justify-content-between align-items-center">
+  <span class="nav-title">AirAware</span>
+
+  <button id="themeToggle" class="btn btn-light btn-sm">🌙 Dark Mode</button>
+</nav>
+
+<div class="container my-4">
+
+  <h1 class="airaware-title">AirAware <span>Dashboard</span></h1>
+  <p class="airaware-subtitle">Delhi Air Quality — AQI Prediction System</p>
+
+  <!-- TOP CARDS -->
+  <div class="row g-3 mb-4">
+
+    <!-- CURRENT AQI -->
+    <div class="col-lg-3 col-md-6">
+      <div class="card info-card">
+        <div class="card-body">
+          <h6 class="card-title">Present Air Quality</h6>
+          <div class="display-values">
+            <div><strong>PM2.5:</strong> <span id="presentPm">—</span></div>
+            <div><strong>CO₂:</strong> <span id="presentCo2">—</span></div>
+            <div><strong>NO₂:</strong> <span id="presentNo2">—</span></div>
+            <div><strong>Current AQI:</strong> <span id="presentAqi">—</span></div>
+
+            <span id="presentLabel" class="badge bg-success mt-2">Good</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LAST YEAR -->
+    <div class="col-lg-3 col-md-6">
+      <div class="card info-card">
+        <div class="card-body">
+          <h6 class="card-title">Last Year (Avg)</h6>
+          <div class="display-values">
+            <div><strong>PM2.5:</strong> <span id="lastPm">—</span></div>
+            <div><strong>CO₂:</strong> <span id="lastCo2">—</span></div>
+            <div><strong>NO₂:</strong> <span id="lastNo2">—</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AQI PREDICTION -->
+    <div class="col-lg-3 col-md-6">
+      <div class="card info-card">
+        <div class="card-body">
+          <h6 class="card-title">AQI Prediction</h6>
+          <div class="display-values">
+            <div><strong>AQI in 1 year:</strong> <span id="pred1">—</span></div>
+            <div><strong>AQI in 5 years:</strong> <span id="pred5">—</span></div>
+          </div>
+          <button id="predictBtn" class="btn btn-sm btn-primary mt-2">Predict AQI</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEATMAP -->
+    <div class="col-lg-3 col-md-6">
+      <div class="card info-card">
+        <div class="card-body">
+          <h6 class="card-title">Accuracy Heatmap</h6>
+          <div id="heatmap" class="heatmap-grid mt-2"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CHARTS -->
+  <div class="row mb-4">
+
+    <!-- HISTORY CHART -->
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <h6>Past Years Trend</h6>
+          <canvas id="historyChart" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- PREDICTION CHART -->
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h6>Prediction Breakdown (AQI)</h6>
+          <canvas id="predChart" height="180"></canvas>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
